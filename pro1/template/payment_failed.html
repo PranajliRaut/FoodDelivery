@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<style>
+    .nav-link {
+        color: #666666 !important;
+    }
+    .mu-header, nav, header {
+        background-color: black !important;
+    }
+    .failed-section {
+        padding-top: 100px;
+        text-align: center;
+    }
+    .failed-image {
+        height: 350px;
+        margin-bottom: 60px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f44336; /* Red color for failure */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .button:hover {
+        background-color: #d32f2f; /* Darker red on hover */
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="failed-section">
+    <div style="width: 50%; margin: 50px auto;">
+        <img src="{% static 'img/failed.gif' %}" alt="Failed" class="failed-image">
+        <h2>Payment Failed!</h2>
+        <a href="{% url 'dashboard' %}" class="button">Click Here to Visit Profile</a>
+    </div>
+</section>
+{% endblock %}
